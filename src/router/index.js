@@ -1,14 +1,38 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import Landing from "@/views/Landing";
+import RoomCatalog from "@/views/RoomCatalog";
+import ReservationForm from "@/views/ReservationForm";
+import Fares from "@/views/Fares";
+import Services from "@/views/Services";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "LandingPage",
+    component: Landing,
+  },
+  {
+    path: "/habitaciones",
+    name: "RoomCatalog",
+    component: RoomCatalog,
+  },
+  {
+    path: "/reservaciones",
+    name: "ReservationForm",
+    component: ReservationForm,
+  },
+  {
+    path: "/tarifas",
+    name: "FaresSection",
+    component: Fares,
+  },
+  {
+    path: "/servicios",
+    name: "ServicesSection",
+    component: Services,
   },
   {
     path: "/about",
@@ -22,9 +46,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
   routes,
+  mode: "history",
 });
 
 export default router;
